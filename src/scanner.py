@@ -16,7 +16,7 @@ def scan_addr(addr: str, port: int):
 def scan_list(targets: list[(str, int)]):
     for i in targets:
         result = scan_addr(*i)
-        print(f'{i[1]}: {"OPEN" if result else "CLOSED"}')
+        print(f'{i[0]} on port {i[1]}: {"OPEN" if result else "CLOSED"}')
 
 # calls the scan_all function on a provided number of threads
 def start_scan(targets: list[str], thread_count: int = 1):
